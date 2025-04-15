@@ -8,8 +8,6 @@ import Switch from "@mui/joy/Switch";
 import ScrapeEnglish from "./ScrapeEnglish";
 import ScrapeNepali from "./ScrapeNepali";
 
-import wall from "../images/wall.png";
-
 const ScrapedEnglish = () => {
   const [dark, setDark] = useState(false);
   const navigate = useNavigate();

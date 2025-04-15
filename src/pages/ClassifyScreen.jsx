@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import "./ClassifyScreen.css";
 import axios from "axios";
 import Loader from "../components/Loader";
 import toast, { Toaster } from "react-hot-toast";
-import ButtonClassify from "../components/ButtonClassify";
 
 const Form = () => {
   const [field1Value, setField1Value] = useState("");
@@ -20,7 +19,7 @@ const Form = () => {
     setField1Value(event.target.value);
   };
 
-  const handleField2Change = (event) => { 
+  const handleField2Change = (event) => {
     setField2Value(event.target.value);
     console.log(event.target.value);
   };
@@ -55,8 +54,8 @@ const Form = () => {
 
   return (
     <>
-      <Toaster/>
-      <Navbar/>
+      <Toaster />
+      <Navbar />
       <div className={`wrapper ${loading ? "load" : ""}`}>
         <div className="classify-screen">
           <h1>Classify & Summarize</h1>
@@ -98,10 +97,11 @@ const Form = () => {
             </label>
 
             <br />
-            { <button type="submit" className="classify-btn">
-              Classify & Summarize
-            </button> }
-          
+            {
+              <button type="submit" className="classify-btn">
+                Classify & Summarize
+              </button>
+            }
           </form>
           {loading ? (
             <Loader className="loader" />
@@ -158,7 +158,7 @@ const Form = () => {
                       <ul>
                         {Object.entries(resp.tf_idf).map(([key, value]) => (
                           <li key={key}>
-                            Sentence {key} : <strong> {value} </strong> 
+                            Sentence {key} : <strong> {value} </strong>
                           </li>
                         ))}
                       </ul>

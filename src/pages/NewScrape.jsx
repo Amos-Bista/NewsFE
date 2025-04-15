@@ -17,27 +17,25 @@ const NewScrape = () => {
     setEngLoading(true);
     try {
       const res = await axios.get("http://127.0.0.1:5000/scrapeEnglishNews");
+      console.log("response", res);
       setEngLoading(false);
       toast.success("Scraped Successfully");
       return window.location.assign("/scrape");
     } catch (err) {
       // Delay the error toast for 5 seconds using async/await
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      await new Promise((resolve) => setTimeout(resolve, 5000));
       toast.error("Something Went Wrong: " + err);
     }
   };
 
   const nepScrape = async () => {
     setNepLoading(true);
-    await axios
-      .get("http://localhost:5000/scrapeNepaliNews")
-      .then((res) => {
-        console.log(res.data);
-        setNepLoading(false);
-        toast.success("Scraped Successfully");
-        return window.location.assign("/scrape");
-      })
-      
+    await axios.get("http://localhost:5000/scrapeNepaliNews").then((res) => {
+      console.log(res.data);
+      setNepLoading(false);
+      toast.success("Scraped Successfully");
+      return window.location.assign("/scrape");
+    });
   };
 
   const handleClick = () => {
