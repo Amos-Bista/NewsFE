@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,9 +20,10 @@ const Header = () => {
           Welcome to Flash Feed, where we summarize long news articles and
           provide you with a quick overview of the most important information.
         </p>
-        <a href="/classify" className="cv-btn">
+
+        <Link className="cv-btn" to="/classify">
           Classify
-        </a>
+        </Link>
       </div>
     </div>
   );
