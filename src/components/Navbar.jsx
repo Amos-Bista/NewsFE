@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../images/snap-news-logo2.png";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ location }) => {
   const [nav, setNav] = useState(false);
@@ -24,33 +25,33 @@ const Navbar = ({ location }) => {
 
   return (
     <nav className={nav ? `nav active` : `nav`}>
-      <a href="/#" className="logo" onClick={() => setClickNav(0)}>
+      <Link to="/#" className="logo" onClick={() => setClickNav(0)}>
         <img src={logo} alt="" />
-      </a>
+      </Link>
       <input type="checkbox" className="menu-btn" id="menu-btn" />
       <label className="menu-icon" htmlFor="menu-btn">
         <span className="nav-icon"></span>
       </label>
       <ul className="menu">
         <li>
-          <a
-            href="/#"
+          <Link
+            to="/#"
             className={clickNav === 0 ? `active` : ``}
             onClick={() => {
               setClickNav(0);
             }}
           >
             Home
-          </a>  
+          </Link>
         </li>
         <li>
-          <a
-            href="/#features"
+          <Link
+            to="/#features"
             className={clickNav === 1 ? `active` : ``}
             onClick={() => setClickNav(1)}
           >
             Features
-          </a>
+          </Link>
         </li>
         <li>
           <a
@@ -62,13 +63,13 @@ const Navbar = ({ location }) => {
           </a>
         </li>
         <li>
-          <a
-            href="/start"
+          <Link
+            to="/start"
             className={clickNav === 3 ? `active` : ``}
             onClick={() => setClickNav(3)}
           >
             Get Started
-          </a>
+          </Link>
         </li>
         {/* <li>
           <a href="/">Download</a>
